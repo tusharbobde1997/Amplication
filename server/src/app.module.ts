@@ -1,6 +1,7 @@
 import { Module } from "@nestjs/common";
 import { UserModule } from "./user/user.module";
-import { ProjectModule } from "./project/project.module";
+import { EmployeeDetailModule } from "./employeeDetail/employeeDetail.module";
+import { ProjectManagerModule } from "./projectManager/projectManager.module";
 import { HealthModule } from "./health/health.module";
 import { ACLModule } from "./auth/acl.module";
 import { AuthModule } from "./auth/auth.module";
@@ -15,7 +16,8 @@ import { GraphQLModule } from "@nestjs/graphql";
   controllers: [],
   imports: [
     UserModule,
-    ProjectModule,
+    EmployeeDetailModule,
+    ProjectManagerModule,
     HealthModule,
     ACLModule,
     AuthModule,

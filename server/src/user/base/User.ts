@@ -1,8 +1,7 @@
 import { ObjectType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsString, IsOptional, ValidateNested } from "class-validator";
+import { IsDate, IsString, IsOptional } from "class-validator";
 import { Type } from "class-transformer";
-import { Project } from "../../project/base/Project";
 @ObjectType()
 class User {
   @ApiProperty({
@@ -42,15 +41,6 @@ class User {
     nullable: true,
   })
   lastName!: string | null;
-
-  @ApiProperty({
-    required: false,
-    type: () => [Project],
-  })
-  @ValidateNested()
-  @Type(() => Project)
-  @IsOptional()
-  projects?: Array<Project>;
 
   @ApiProperty({
     required: true,
