@@ -9,10 +9,14 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
-import { ProjectList } from "./project/ProjectList";
-import { ProjectCreate } from "./project/ProjectCreate";
-import { ProjectEdit } from "./project/ProjectEdit";
-import { ProjectShow } from "./project/ProjectShow";
+import { EmployeeDetailList } from "./employeeDetail/EmployeeDetailList";
+import { EmployeeDetailCreate } from "./employeeDetail/EmployeeDetailCreate";
+import { EmployeeDetailEdit } from "./employeeDetail/EmployeeDetailEdit";
+import { EmployeeDetailShow } from "./employeeDetail/EmployeeDetailShow";
+import { ProjectManagerList } from "./projectManager/ProjectManagerList";
+import { ProjectManagerCreate } from "./projectManager/ProjectManagerCreate";
+import { ProjectManagerEdit } from "./projectManager/ProjectManagerEdit";
+import { ProjectManagerShow } from "./projectManager/ProjectManagerShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -32,7 +36,7 @@ const App = (): React.ReactElement => {
   return (
     <div className="App">
       <Admin
-        title={"Company"}
+        title={"Business"}
         dataProvider={dataProvider}
         authProvider={jwtAuthProvider}
         theme={theme}
@@ -47,11 +51,18 @@ const App = (): React.ReactElement => {
           show={UserShow}
         />
         <Resource
-          name="Project"
-          list={ProjectList}
-          edit={ProjectEdit}
-          create={ProjectCreate}
-          show={ProjectShow}
+          name="EmployeeDetail"
+          list={EmployeeDetailList}
+          edit={EmployeeDetailEdit}
+          create={EmployeeDetailCreate}
+          show={EmployeeDetailShow}
+        />
+        <Resource
+          name="ProjectManager"
+          list={ProjectManagerList}
+          edit={ProjectManagerEdit}
+          create={ProjectManagerCreate}
+          show={ProjectManagerShow}
         />
       </Admin>
     </div>

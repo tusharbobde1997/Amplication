@@ -1,5 +1,5 @@
 {
-  "name": "@company/server",
+  "name": "@business/server",
   "private": true,
   "scripts": {
     "start": "nest start",
